@@ -1,8 +1,12 @@
+import { useTranslations } from 'next-intl';
+
 export default function SignUp() {
+  const t = useTranslations('SignUp');
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
       <div>
-        <h1>Create a free account!</h1>
+        <h1>{t('title')}</h1>
       </div>
     </main>
   );
