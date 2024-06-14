@@ -5,15 +5,15 @@ import { Label } from '@/components/ui/label';
 // import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-export default function SignUp() {
+export default function SignIn() {
   // const t = useTranslations('SignUp');
 
   return (
     <main className='w-full h-screen flex items-center justify-center px-4'>
       <Card className='mx-auto max-w-sm w-96'>
         <CardHeader>
-          <CardTitle className='text-xl'>Sign Up</CardTitle>
-          <CardDescription>Enter your information to create an account</CardDescription>
+          <CardTitle className='text-2xl'>Login</CardTitle>
+          <CardDescription>Enter your email below to login to your account</CardDescription>
         </CardHeader>
         <CardContent>
           <div className='grid gap-4'>
@@ -22,20 +22,25 @@ export default function SignUp() {
               <Input id='email' type='email' placeholder='m@example.com' required />
             </div>
             <div className='grid gap-2'>
-              <Label htmlFor='password'>Password</Label>
-              <Input id='password' type='password' />
+              <div className='flex items-center'>
+                <Label htmlFor='password'>Password</Label>
+                <Link href='#' className='ml-auto inline-block text-sm underline'>
+                  Forgot your password?
+                </Link>
+              </div>
+              <Input id='password' type='password' required />
             </div>
             <Button type='submit' className='w-full'>
-              Create an account
+              Login
             </Button>
             <Button variant='outline' className='w-full'>
-              Sign up with Google
+              Login with Google
             </Button>
           </div>
           <div className='mt-4 text-center text-sm'>
-            Already have an account?{' '}
-            <Link href='/sign-in' className='underline'>
-              Sign in
+            Don&apos;t have an account?{' '}
+            <Link href='/sign-up' className='underline'>
+              Sign up
             </Link>
           </div>
         </CardContent>
