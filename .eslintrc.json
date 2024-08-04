@@ -30,6 +30,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_", "ignoreRestSiblings": true }],
     "object-curly-spacing": ["error", "always"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "import/extensions": [
@@ -46,7 +47,13 @@
     "no-unused-vars": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "jsx-quotes": ["error", "prefer-single"]
+    "jsx-quotes": ["error", "prefer-single"],"max-len": ["error", {
+      "code": 80,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignorePattern": "className=\"([^\"]+)\""
+    }]
   },
   "settings": {
     "react": {
